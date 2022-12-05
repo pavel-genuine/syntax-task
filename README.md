@@ -1,15 +1,8 @@
-# ![coderAccess](https://i.ibb.co/T1GPd2h/Screenshot-266.png)
-# coderAccess
-<table>
-<tr>
-<td>
- coderAccess is an online judge, a problem solving platform to help you enhance your skills, expand your knowledge and prepare for technical interviews.
-</td>
-</tr>
-</table>
+
+# Syntax InterView Task
 
 ## Demo
-Here is a working live demo :  https://coder-access.web.app/
+Here is a working live demo :  https://syntax-task.web.app/
 
 
 ## Features:
