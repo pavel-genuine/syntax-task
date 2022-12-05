@@ -14,10 +14,10 @@ const AllContents = () => {
     return (
 
         <div>
-            <div className='py-[5%]'>
+            <div className='pt-20 pb-5'>
                 <div className='text-center space-x-8 mb-10 '>
                     <div className='bg-slate-50 p-2'>
-                        <h2 className="text-4xl mr-16 text-center font-semibold flex justify-center"><span className='text-[brown]'>Syntax</span>Contents</h2>
+                        <h2 className="text-4xl md:mr-16 text-center font-semibold flex justify-center"><span className='text-[brown]'>Syntax</span>Contents</h2>
                         <p className="font-mono mt-4  text-sm">
                             Welcome to the friendliest place for anyone to explore!
                         </p>
