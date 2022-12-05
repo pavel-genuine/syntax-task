@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const SideBar = ({ index, color }) => {
     return (
-        <div className='md:border-r  py-3 md:py-0 px-auto mx-auto md:ml-0 md:sticky left-[0%] top-[10%]  md:h-[90vh] md:w-[70%] w-[100%] md:pl-4  md:block'>
+        <div className='md:border-r bg-slate-100 py-3 md:py-0 px-auto mx-auto md:ml-0 md:sticky left-[0%] top-[10%]  md:h-[90vh] md:w-[70%] w-[100%] md:pl-4  md:block'>
             <div className='flex md:flex-col '>
                 <div className='flex md:flex-col md:ml-2 mx-auto md:mt-[23vh] md:mb-[20vh] space-x-7 md:space-y-10 md:space-x-0'>
                     <Link to='/admin/content-list'>

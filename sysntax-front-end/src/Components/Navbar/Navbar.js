@@ -49,8 +49,11 @@ const Navbar = ({ filterHandler, searchHandler }) => {
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </label>
                             <input type="checkbox" name="" id="menuToggler" />
-                            <Link to='/' className="btn btn-ghost normal-case text-3xl text-[#e50914] font-bold">Jucundu</Link>
-                        </div>
+                            <div tabIndex="0" id="menuContent" className=" menu border border-slate-600 bg-white text-[white]  bg-opacity-60 menu menu-compact dropdown-content my-2 p-4 shadow  rounded-box w-36 space-y-3">
+                                {menuItems}
+                            </div>
+                    </div>
+                        <Link to='/' className="btn btn-ghost normal-case text-3xl text-[brown] font-bold">Syntax</Link>
                     </div>
                     <div className='space-x-3'>
                         <div className="navbar-cente hidden lg:flex">
