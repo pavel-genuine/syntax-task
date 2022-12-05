@@ -22,11 +22,9 @@ const ContentDetail = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
 
-
         dispatch(singlePostGet(id))
 
     }, [])
-
 
     const splitText = (text, from, to) => [
         text?.slice(0, from),

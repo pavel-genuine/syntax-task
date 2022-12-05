@@ -18,7 +18,7 @@ const SingleContent = ({ content}) => {
                     <Link to={`/content-detail/${content?._id}`}>
                         <div className='cursor-pointer flex  flex-col md:flex-row md:items-center md:space-x-6 ml-5 md:ml-0'>
 
-                            <img loading='lazy' src={content?.banner} alt="" className="flex-none w-24 border-2  rounded-md bg-slate-100" />
+                            <img loading='lazy' src={content?.banner} alt="" className="flex-none w-24 h-16 border-2  rounded-md bg-slate-100" />
                             <div className="min-w-0 relative flex-auto">
 
                                 <h2 className="font-semibold text-slate-900 truncate hover:text-[brown]"> {content?.title}</h2>

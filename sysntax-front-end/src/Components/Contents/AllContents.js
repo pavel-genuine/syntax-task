@@ -14,7 +14,7 @@ const AllContents = () => {
     return (
 
         <div>
-            <div className='pt-[5.9%]'>
+            <div className='py-[5%]'>
                 <div className='text-center space-x-8 mb-10 '>
                     <div className='bg-slate-50 p-2'>
                         <h2 className="text-4xl mr-16 text-center font-semibold flex justify-center"><span className='text-[brown]'>Syntax</span>Contents</h2>

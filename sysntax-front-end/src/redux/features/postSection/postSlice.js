@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {  getSingleContent,} from "../../../api/api";
+import {  deletePost, getSingleContent,} from "../../../api/api";
 
 //
 export const publishPost =createAsyncThunk("/post/publishPost",
@@ -9,13 +9,7 @@ async(post)=>{
     // return res?.data;
 })
 //
-// export const allPosts =createAsyncThunk("/post/getAllPosts",
-// async()=>{
-//     const res = await getAllPosts();
-//     console.log('getAllPosts thunk',res?.data);
-//     return res?.data;
-// })
-//
+
 export const singlePostGet =createAsyncThunk("/post/singlePost",
 async(id)=>{
     const res = await getSingleContent(id);
@@ -25,9 +19,9 @@ async(id)=>{
 //
 export const postDelete =createAsyncThunk("/post/postDelete",
 async(id)=>{
-    // const res = await deletePost(id);
+    const res = await deletePost(id);
     // console.log('deletePost thunk',res?.data);
-    // return res?.data;
+    return res?.data;
 })
 
 

@@ -3,54 +3,42 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getAllContents } from "../../../api/api";
+import { postDelete } from "../../../redux/features/postSection/postSlice";
 
 import SideBar from "../SideBar";
 
 const ContentList = () => {
 
-    const [filteredMovies, setfilteredMovies] = useState();
-    const [searchText, setSearchText] = useState('')
     const [postsNumber, setPostsNumber] = useState(0)
     const [pageCount, setPageCount] = useState(1)
     const [page, setPage] = useState(1)
-    const [posts, setPosts] = useState(1)
-
-    const filterHandler = (data) => {
-
-        setfilteredMovies(() => data)
-
-        // console.log('filtered', data);
-    }
+    const [posts, setPosts] = useState()
 
     const { post } = useSelector(state => state?.deletePost)
     const dispatch = useDispatch()
 
-
-
-    // console.log('page',page);
-
     useEffect(() => {
-
-
         const fetchPost = async () => {
             const { data } = await getAllContents()
             setPosts(data)
             setPostsNumber(() => posts?.length)
-
         }
 
         fetchPost()
 
         setPageCount(() => Math.ceil(postsNumber / 20))
 
-    }, [posts, filteredMovies, searchText, page])
+    }, [])
 
     const handleDeleteOne = (id) => {
         const confirmation = window.confirm('Are you sure to delete?');
         if (confirmation) {
-            // dispatch(postDelete(id))
+            dispatch(postDelete(id))
             const newposts = posts?.filter(item => item?._id != id);
-            setPosts(newposts)
+            setPosts(()=>newposts)
+
+            console.log(newposts,'new');
+            console.log(posts,'new p');
         }
     }
 
@@ -84,7 +72,7 @@ const ContentList = () => {
                                                 return <tr key={post?._id}>
                                                     <td class="border border-[#181818] px-5 py-2">{post?.title}</td>
                                                     <td class="border border-[#181818] ">
-                                                        <img className="w-36" src={post?.banner} alt="" />
+                                                        <img className="w-36 h-24" src={post?.banner} alt="" />
                                                     </td>
                                                     
                                                     <td class="border border-[#181818] px-5 py-2 ">
