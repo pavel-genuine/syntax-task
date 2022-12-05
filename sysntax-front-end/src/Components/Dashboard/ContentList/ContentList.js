@@ -9,9 +9,6 @@ import SideBar from "../SideBar";
 
 const ContentList = () => {
 
-    const [postsNumber, setPostsNumber] = useState(0)
-    const [pageCount, setPageCount] = useState(1)
-    const [page, setPage] = useState(1)
     const [posts, setPosts] = useState()
 
     const { post } = useSelector(state => state?.deletePost)
@@ -21,14 +18,9 @@ const ContentList = () => {
         const fetchPost = async () => {
             const { data } = await getAllContents()
             setPosts(data)
-            setPostsNumber(() => posts?.length)
         }
-
         fetchPost()
-
-        setPageCount(() => Math.ceil(postsNumber / 20))
-
-    }, [])
+    }, [posts])
 
     const handleDeleteOne = (id) => {
         const confirmation = window.confirm('Are you sure to delete?');
@@ -36,9 +28,6 @@ const ContentList = () => {
             dispatch(postDelete(id))
             const newposts = posts?.filter(item => item?._id != id);
             setPosts(()=>newposts)
-
-            console.log(newposts,'new');
-            console.log(posts,'new p');
         }
     }
 
@@ -99,12 +88,6 @@ const ContentList = () => {
                                 </table>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="flex justify-center my-10 mx-auto">
-                        {
-                            // [...Array(pageCount).keys()].map(number => <button onClick={() => setPage(number + 1)} className={`btn btn-sm mx-2 text-center border ${page == number + 1 ? 'bg-[brown]' : ''}`}>{number + 1}</button>)
-                        }
                     </div>
                 </div>
 
